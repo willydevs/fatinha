@@ -5,11 +5,15 @@ import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3 } from '../assets/images'
 
 const photos = [fatinaPhoto1, fatinaPhoto2, fatinaPhoto3]
 
+function yearsActive() {
+  const now = new Date()
+  const y = now.getFullYear() - 2017
+  return now.getMonth() >= 4 ? y : y - 1 // contagem completa a partir de maio
+}
+
 const stats = [
-  { value: 120, suffix: '+', label: 'Eventos realizados' },
-  { text: 'Maio/2017', label: 'Início da jornada' },
-  { value: 500, suffix: '+', label: 'Noivos felizes' },
-  { value: 4,   suffix: '',  label: 'Estados atendidos' },
+  { value: 140, suffix: '+', label: 'Eventos realizados' },
+  { value: yearsActive(), suffix: '+', label: 'Anos de experiência' },
 ]
 
 function Counter({ target, suffix, active }) {
@@ -145,7 +149,7 @@ export default function About() {
         {/* Stats row */}
         <div
           ref={statsRef}
-          className="mt-20 lg:mt-28 pt-14 border-t border-primary/15 grid grid-cols-2 lg:grid-cols-4 gap-10 text-center"
+          className="mt-20 lg:mt-28 pt-14 border-t border-primary/15 grid grid-cols-2 gap-10 text-center max-w-xl mx-auto w-full"
         >
           {stats.map(s => (
             <div key={s.label} className="flex flex-col items-center gap-2">

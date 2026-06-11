@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { imgCamilaJuan, imgAlinaChico, imgMagnoliaGuto } from '../assets/images'
+import { heroSlide1, heroSlide2, heroSlide3 } from '../assets/images'
 
 const slides = [
   {
-    image: imgCamilaJuan,
+    image: heroSlide1,
     label: 'FATINHA CASTRO  ·  ASSESSORIA E CERIMONIAL',
     line1: 'A tarefa de sonhar',
     line2: 'é toda sua.',
@@ -12,7 +12,7 @@ const slides = [
     cta: { text: 'REALIZE SEU SONHO', path: '/contato' },
   },
   {
-    image: imgAlinaChico,
+    image: heroSlide2,
     label: 'CASAMENTOS  ·  DEBUTANTES  ·  EVENTOS',
     line1: 'Nos detalhes',
     line2: 'está a felicidade.',
@@ -20,7 +20,7 @@ const slides = [
     cta: { text: 'CONHEÇA NOSSO TRABALHO', path: '/galeria' },
   },
   {
-    image: imgMagnoliaGuto,
+    image: heroSlide3,
     label: 'FATINHA CASTRO  ·  ASSESSORIA E CERIMONIAL',
     line1: 'Preparados para a melhor',
     line2: 'festa de suas vidas?',

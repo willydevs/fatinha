@@ -48,7 +48,7 @@ export default function Services() {
 
           <h2 className="font-cormorant font-light text-[clamp(2.4rem,5vw,4.2rem)] text-charcoal leading-[1.15]">
             Método Diamante<br />
-            <em className="font-playfair italic text-primary">para celebrar sem preocupações</em>
+            <em className="font-playfair italic text-primary">A arte de planejar com excelência, precisão e transparência.</em>
           </h2>
         </div>
 
