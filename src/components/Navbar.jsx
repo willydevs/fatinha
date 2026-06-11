@@ -38,6 +38,8 @@ export default function Navbar() {
     return location.pathname.startsWith(path)
   }
 
+  const isHero = location.pathname === '/' && !scrolled
+
   const linkCls = (path) =>
     `nav-link font-montserrat text-[9.5px] font-medium tracking-[0.28em] transition-colors duration-300 ${
       isActive(path)
@@ -57,32 +59,47 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative flex items-center h-[78px] lg:h-[92px]">
-          <nav className="hidden lg:flex items-center gap-9 flex-1">
-            {leftLinks.map(l => (
-              <Link key={l.name} to={l.path} className={linkCls(l.path)}>
-                {l.name}
-              </Link>
-            ))}
-          </nav>
 
-          <Link
-            to="/"
-            className={`absolute left-1/2 -translate-x-1/2 flex items-center group transition-opacity duration-300 ${scrolled ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
-          >
-            <img
-              src={logo}
-              alt="Fatinha Castro"
-              className="h-10 lg:h-12 w-auto group-hover:opacity-100"
-            />
-          </Link>
+          {isHero ? (
+            /* Hero: todos os links centrados, sem logo */
+            <nav className="hidden lg:flex items-center justify-center gap-9 flex-1">
+              {[...leftLinks, ...rightLinks].map(l => (
+                <Link key={l.name} to={l.path} className={linkCls(l.path)}>
+                  {l.name}
+                </Link>
+              ))}
+            </nav>
+          ) : (
+            /* Normal: split nav + logo centralizada */
+            <>
+              <nav className="hidden lg:flex items-center gap-9 flex-1">
+                {leftLinks.map(l => (
+                  <Link key={l.name} to={l.path} className={linkCls(l.path)}>
+                    {l.name}
+                  </Link>
+                ))}
+              </nav>
 
-          <nav className="hidden lg:flex items-center gap-9 flex-1 justify-end">
-            {rightLinks.map(l => (
-              <Link key={l.name} to={l.path} className={linkCls(l.path)}>
-                {l.name}
+              <Link
+                to="/"
+                className="absolute left-1/2 -translate-x-1/2 flex items-center group"
+              >
+                <img
+                  src={scrolled ? logo : logoWhite}
+                  alt="Fatinha Castro"
+                  className="h-10 lg:h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </Link>
-            ))}
-          </nav>
+
+              <nav className="hidden lg:flex items-center gap-9 flex-1 justify-end">
+                {rightLinks.map(l => (
+                  <Link key={l.name} to={l.path} className={linkCls(l.path)}>
+                    {l.name}
+                  </Link>
+                ))}
+              </nav>
+            </>
+          )}
 
           <button
             onClick={() => setMenuOpen(true)}

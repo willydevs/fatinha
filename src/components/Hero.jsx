@@ -25,12 +25,12 @@ export default function Hero() {
       {/* Overlay suave */}
       <div className="absolute inset-0 bg-black/25" />
 
-      {/* Logo — direita no desktop, centralizada no mobile */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center lg:justify-end lg:pr-[8vw]">
+      {/* Logo — centralizada no mobile, posicionada no terço direito no desktop */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center lg:items-center lg:justify-end lg:pr-[18%]">
         <img
           src={logoWhite}
           alt="Fatinha Castro"
-          className="w-[clamp(160px,22vw,300px)] h-auto opacity-90"
+          className="w-[clamp(160px,20vw,280px)] h-auto opacity-90"
           style={{ animation: 'fadeIn 1.2s ease both' }}
         />
       </div>
