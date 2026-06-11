@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { heroSlide1, logoWhite } from '../assets/images'
+import { heroSlide1 } from '../assets/images'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -25,15 +25,6 @@ export default function Hero() {
       {/* Overlay suave */}
       <div className="absolute inset-0 bg-black/25" />
 
-      {/* Logo centralizada */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <img
-          src={logoWhite}
-          alt="Fatinha Castro"
-          className="w-[clamp(180px,30vw,340px)] h-auto opacity-90"
-          style={{ animation: 'fadeIn 1.2s ease both' }}
-        />
-      </div>
     </section>
   )
 }
