@@ -67,12 +67,12 @@ export default function Navbar() {
 
           <Link
             to="/"
-            className="absolute left-1/2 -translate-x-1/2 flex items-center group"
+            className={`absolute left-1/2 -translate-x-1/2 flex items-center group transition-opacity duration-300 ${scrolled ? 'opacity-90' : 'opacity-0 pointer-events-none'}`}
           >
             <img
-              src={scrolled ? logo : logoWhite}
+              src={logo}
               alt="Fatinha Castro"
-              className="h-10 lg:h-12 w-auto transition-opacity duration-300 opacity-90 group-hover:opacity-100"
+              className="h-10 lg:h-12 w-auto group-hover:opacity-100"
             />
           </Link>
 
