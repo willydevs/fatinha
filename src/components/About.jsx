@@ -7,7 +7,7 @@ const photos = [fatinaPhoto1, fatinaPhoto2, fatinaPhoto3]
 
 const stats = [
   { value: 120, suffix: '+', label: 'Eventos realizados' },
-  { value: 8,   suffix: '+', label: 'Anos de experiência' },
+  { text: 'Maio/2017', label: 'Início da jornada' },
   { value: 500, suffix: '+', label: 'Noivos felizes' },
   { value: 4,   suffix: '',  label: 'Estados atendidos' },
 ]
@@ -100,8 +100,9 @@ export default function About() {
 
             {/* Floating accent badge */}
             <div className="absolute -bottom-5 -right-5 lg:-right-8 glass-dark rounded-none p-5 lg:p-6 text-center shadow-2xl">
-              <p className="font-cormorant font-light text-[2rem] text-primary leading-none">8+</p>
-              <p className="font-montserrat text-[8.5px] tracking-[0.3em] text-white/80 uppercase mt-1">Anos de<br/>experiência</p>
+              <p className="font-cormorant font-light text-[1.6rem] text-primary leading-none">Maio</p>
+              <p className="font-cormorant font-light text-[2rem] text-primary leading-none">2017</p>
+              <p className="font-montserrat text-[8.5px] tracking-[0.3em] text-white/80 uppercase mt-1">Desde então</p>
             </div>
           </div>
 
@@ -148,7 +149,10 @@ export default function About() {
         >
           {stats.map(s => (
             <div key={s.label} className="flex flex-col items-center gap-2">
-              <Counter target={s.value} suffix={s.suffix} active={statsActive} />
+              {s.text
+                ? <span className="counter-num text-[clamp(2rem,4.5vw,3.2rem)]">{s.text}</span>
+                : <Counter target={s.value} suffix={s.suffix} active={statsActive} />
+              }
               <p className="font-montserrat text-[10px] tracking-[0.25em] text-taupe uppercase mt-1">
                 {s.label}
               </p>
