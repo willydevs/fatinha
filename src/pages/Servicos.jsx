@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 import {
-  imgMonaMaycon, imgBruninha, imgSandra,
+  capaCasamentos, capa15Anos, capaCelebracoes,
   imgCamilaJuan,
 } from '../assets/images'
 
 const services = [
   {
-    image: imgMonaMaycon,
+    image: capaCasamentos,
     label: 'CASAMENTO',
     title: 'Casamento',
     desc: 'Cada grande história merece ser vivida com uma jornada leve, organizada, memorável e sem preocupações. Conduzimos cada detalhe com transparência, excelência e precisão para que vocês vivam apenas o que realmente importa: a emoção do Grande Dia.',
@@ -23,7 +23,7 @@ const services = [
     ],
   },
   {
-    image: imgBruninha,
+    image: capa15Anos,
     label: 'FESTA DE 15 ANOS',
     title: 'Festa de 15 Anos',
     desc: 'Mais do que uma festa, um marco inesquecível na história da debutante. Cuidamos de cada etapa do planejamento para transformar sonhos em uma celebração autêntica, elegante e repleta de significado, emoção e encantamento.',
@@ -38,7 +38,7 @@ const services = [
     ],
   },
   {
-    image: imgSandra,
+    image: capaCelebracoes,
     label: 'CELEBRAÇÕES ESPECIAIS',
     title: 'Celebrações Especiais',
     desc: 'Momentos marcantes merecem ser celebrados com significado, elegância e excelência em cada detalhe. Planejamos e coordenamos comemorações que refletem a história, a personalidade e os sonhos de cada cliente, transformando cada ocasião em uma experiência memorável.',
