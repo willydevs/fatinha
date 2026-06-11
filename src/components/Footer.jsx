@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { logo } from '../assets/images'
+import { logoWhite } from '../assets/images'
 
 const links = [
   { name: 'Início', path: '/' },
@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <img src={logo} alt="Fatinha Castro" className="h-10 w-auto mb-4 opacity-80" onError={e => e.target.style.display='none'} />
+            <img src={logoWhite} alt="Fatinha Castro" className="h-10 w-auto mb-4 opacity-80" onError={e => e.target.style.display='none'} />
             <span className="font-cormorant font-light text-xl tracking-[0.3em] text-white">
               FATINHA CASTRO
             </span>
