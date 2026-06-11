@@ -5,6 +5,9 @@ import fatinaPhoto  from '../../imagens/Foto de fatinha.jpg'
 import fatinaPhoto1 from '../../imagens/foto-fatinha1.jpeg'
 import fatinaPhoto2 from '../../imagens/foto-fatinha2.jpeg'
 import fatinaPhoto3 from '../../imagens/foto-fatinha3.jpeg'
+import capaCasamentos   from '../../imagens/capa-casamentos.jpeg'
+import capa15Anos       from '../../imagens/capa-15-anos.jpeg'
+import capaCelebracoes  from '../../imagens/capa-celebracoes.jpeg'
 
 // ─── Casamentos ───────────────────────────────────────────────────────────────
 import imgAlinaChico          from '../../Galeria – Fatinha Castro/Alina-e-Chico.jpg'
@@ -52,6 +55,9 @@ export {
   fatinaPhoto1,
   fatinaPhoto2,
   fatinaPhoto3,
+  capaCasamentos,
+  capa15Anos,
+  capaCelebracoes,
   // Casamentos
   imgAlinaChico, imgCamilaJuan, imgCamilaZe, imgJessicaDiego,
   imgMagnoliaGuto, imgMonaMaycon, imgItaloTiago, imgStephanieMatheus,

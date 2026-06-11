@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom'
 import { useReveal, useRevealGroup } from '../hooks/useReveal'
-import { imgMonaMaycon, imgBruninha, imgSandra } from '../assets/images'
+import { capaCasamentos, capa15Anos, capaCelebracoes } from '../assets/images'
 
 const services = [
   {
-    image: imgMonaMaycon,
+    image: capaCasamentos,
     label: 'CASAMENTO',
     title: 'Jornada leve\naté o Grande Dia',
     desc: 'Planejamento estratégico, curadoria de fornecedores, cronograma personalizado e coordenação completa para que vocês vivam cada momento com tranquilidade.',
     link: '/servicos',
   },
   {
-    image: imgBruninha,
+    image: capa15Anos,
     label: 'FESTA DE 15 ANOS',
     title: 'Um marco\ninesquecível',
     desc: 'Uma celebração autêntica, elegante e cheia de significado, com cada etapa planejada para refletir a história e a personalidade da debutante.',
     link: '/servicos',
   },
   {
-    image: imgSandra,
+    image: capaCelebracoes,
     label: 'CELEBRAÇÕES ESPECIAIS',
     title: 'Momentos\ncom significado',
     desc: 'Aniversários, bodas, renovações de votos e comemorações especiais conduzidas com excelência, elegância e atenção a cada detalhe.',
