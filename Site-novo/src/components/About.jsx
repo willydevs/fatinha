@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
-import { fatinaPhoto } from '../assets/images'
+import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3 } from '../assets/images'
+
+const photos = [fatinaPhoto1, fatinaPhoto2, fatinaPhoto3]
 
 const stats = [
   { value: 120, suffix: '+', label: 'Eventos realizados' },
@@ -35,9 +37,17 @@ function Counter({ target, suffix, active }) {
 
 export default function About() {
   const [statsActive, setStatsActive] = useState(false)
+  const [photoIdx, setPhotoIdx] = useState(0)
   const statsRef = useRef(null)
   const imgRef   = useReveal(0.15)
   const txtRef   = useReveal(0.15, 150)
+
+  const nextPhoto = useCallback(() => setPhotoIdx(i => (i + 1) % photos.length), [])
+
+  useEffect(() => {
+    const id = setInterval(nextPhoto, 5000)
+    return () => clearInterval(id)
+  }, [nextPhoto])
 
   useEffect(() => {
     const el = statsRef.current
@@ -57,17 +67,34 @@ export default function About() {
         {/* Main content — 2 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* Photo */}
+          {/* Photo slideshow */}
           <div ref={imgRef} className="reveal-left relative">
             <div className="gold-frame">
               <div className="relative overflow-hidden aspect-[3/4]">
-                <img
-                  src={fatinaPhoto}
-                  alt="Fatinha Castro"
-                  className="w-full h-full object-cover object-top"
-                />
-                {/* Subtle vignette */}
+                {photos.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt="Fatinha Castro"
+                    className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700"
+                    style={{ opacity: i === photoIdx ? 1 : 0 }}
+                  />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent pointer-events-none" />
+
+                {/* Dot indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {photos.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setPhotoIdx(i)}
+                      aria-label={`Foto ${i + 1}`}
+                      className={`w-[7px] h-[7px] rounded-full transition-all duration-300 ${
+                        i === photoIdx ? 'bg-primary scale-125' : 'bg-white/60'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 

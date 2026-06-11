@@ -1,56 +1,55 @@
 import { Link } from 'react-router-dom'
-import { useReveal, useRevealGroup } from '../hooks/useReveal'
+import { useReveal } from '../hooks/useReveal'
 import {
   imgMonaMaycon, imgBruninha, imgSandra,
-  imgJessicaDiego, imgLaviniaLins, imgIngridResende,
   imgCamilaJuan,
 } from '../assets/images'
 
 const services = [
   {
     image: imgMonaMaycon,
-    label: 'CASAMENTOS',
-    title: 'Assessoria de Casamento',
-    desc: 'Do primeiro "sim" ao último abraço da festa. Cuidamos de cada etapa do planejamento para que vocês vivam plenamente o dia mais importante das suas vidas.',
+    label: 'CASAMENTO',
+    title: 'Casamento',
+    desc: 'Cada grande história merece ser vivida com uma jornada leve, organizada, memorável e sem preocupações. Conduzimos cada detalhe com transparência, excelência e precisão para que vocês vivam apenas o que realmente importa: a emoção do Grande Dia.',
     items: [
-      'Consultoria inicial e planejamento completo',
-      'Gerenciamento de fornecedores',
-      'Criação do cronograma detalhado',
-      'Coordenação da cerimônia e recepção',
-      'Assessoria no dia do evento (Day-Of)',
-      'Suporte logístico e operacional',
+      'Planejamento estratégico e acompanhamento completo',
+      'Curadoria e gestão de fornecedores',
+      'Desenvolvimento do cronograma personalizado',
+      'Organização e monitoramento de todas as etapas do evento',
+      'Coordenação da cerimônia e da recepção',
+      'Gestão da equipe e fornecedores no dia do casamento',
+      'Controle logístico e operacional',
+      'Suporte integral aos noivos e familiares',
     ],
-    featured: true,
   },
   {
     image: imgBruninha,
-    label: 'DEBUTANTES',
+    label: 'FESTA DE 15 ANOS',
     title: 'Festa de 15 Anos',
-    desc: 'A mais especial das celebrações femininas. Criamos uma experiência única que reflete a personalidade da debutante e emociona cada convidado.',
+    desc: 'Mais do que uma festa, um marco inesquecível na história da debutante. Cuidamos de cada etapa do planejamento para transformar sonhos em uma celebração autêntica, elegante e repleta de significado, emoção e encantamento.',
     items: [
-      'Planejamento temático personalizado',
-      'Coordenação de valsa e apresentações',
-      'Organização de cortejo e daminha',
-      'Decoração em harmonia com o tema',
-      'Gestão de fornecedores especializados',
-      'Acompanhamento no dia da festa',
+      'Planejamento estratégico e personalizado',
+      'Curadoria e gestão de fornecedores',
+      'Construção da experiência e identidade da celebração',
+      'Cronograma e organização de todos os momentos especiais',
+      'Coordenação do cerimonial e das homenagens',
+      'Gestão da equipe e fornecedores no evento',
+      'Gestão operacional e acompanhamento integral no dia da festa',
     ],
-    featured: false,
   },
   {
     image: imgSandra,
-    label: 'FESTAS & EVENTOS',
+    label: 'CELEBRAÇÕES ESPECIAIS',
     title: 'Celebrações Especiais',
-    desc: 'Aniversários, bodas, formaturas, eventos corporativos. Cada ocasião é única e merece ser vivida com elegância e organização impecável.',
+    desc: 'Momentos marcantes merecem ser celebrados com significado, elegância e excelência em cada detalhe. Planejamos e coordenamos comemorações que refletem a história, a personalidade e os sonhos de cada cliente, transformando cada ocasião em uma experiência memorável.',
     items: [
-      'Aniversários de todas as idades',
+      'Aniversários e comemorações especiais',
       'Bodas e renovações de votos',
-      'Formaturas e eventos acadêmicos',
-      'Eventos corporativos e confraternizações',
-      'Festas temáticas personalizadas',
-      'Coquetéis e jantares especiais',
+      'Planejamento personalizado',
+      'Curadoria e gestão de fornecedores',
+      'Cronograma e coordenação do evento',
+      'Gestão operacional e acompanhamento integral',
     ],
-    featured: false,
   },
 ]
 
@@ -93,15 +92,34 @@ export default function Servicos() {
     <>
       <PageHero />
 
-      {/* ── Services ─────────────────────────────────────────────── */}
       <section className="bg-cream py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center mb-20 lg:mb-28">
+          <p className="section-label mb-5">Assessoria Completa</p>
+          <h2 className="font-cormorant font-light text-[clamp(2.2rem,4.5vw,3.6rem)] text-charcoal leading-[1.15] mb-7">
+            Método Diamante
+          </h2>
+          <div className="font-dm font-light text-[15px] md:text-[16px] text-taupe leading-[1.9] space-y-5">
+            <p>
+              Através do nosso exclusivo Método Diamante, conduzimos cada etapa do planejamento com transparência, excelência e atenção aos detalhes, transformando a organização do evento em uma experiência leve, segura e prazerosa.
+            </p>
+            <p>
+              Nossa assessoria vai muito além da coordenação do Grande Dia. Estamos ao lado dos nossos clientes desde os primeiros passos do planejamento até o encerramento da celebração, oferecendo direcionamento estratégico, gestão de fornecedores, acompanhamento contínuo e soluções personalizadas para cada necessidade.
+            </p>
+            <p>
+              Cuidamos dos bastidores para que vocês possam viver cada momento com tranquilidade, confiança e a certeza de que tudo está sendo conduzido com profissionalismo e dedicação.
+            </p>
+            <p className="font-cormorant text-[1.6rem] text-charcoal leading-[1.35]">
+              Porque grandes histórias merecem ser vividas sem preocupações e celebradas com excelência em cada detalhe.
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-20 lg:gap-28">
           {services.map((s, i) => (
             <div
               key={s.label}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}
             >
-              {/* Image */}
               <div className="gold-frame">
                 <div className="overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[480px]">
                   <img
@@ -112,7 +130,6 @@ export default function Servicos() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="flex flex-col gap-5">
                 <p className="section-label">{s.label}</p>
                 <h2 className="font-cormorant font-light text-[clamp(2rem,4vw,3rem)] text-charcoal leading-[1.2]">
@@ -138,7 +155,6 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* ── Process ──────────────────────────────────────────────── */}
       <section className="bg-secondary py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div ref={h1} className="reveal text-center mb-16">
@@ -150,7 +166,7 @@ export default function Servicos() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((p, i) => (
+            {process.map((p) => (
               <div key={p.num} className="flex flex-col items-center text-center group">
                 <div className="relative mb-6">
                   <span className="font-cormorant font-light text-[5rem] leading-none text-primary/20 group-hover:text-primary/40 transition-colors duration-500">
@@ -168,7 +184,6 @@ export default function Servicos() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="bg-accent py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <div ref={h2} className="reveal">

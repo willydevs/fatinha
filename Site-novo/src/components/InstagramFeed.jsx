@@ -33,12 +33,12 @@ export default function InstagramFeed() {
           <div className="flex items-center justify-center gap-3 mt-6">
             <div className="w-10 h-px bg-primary/40" />
             <a
-              href="https://www.instagram.com/fatinhacastrocerimonial"
+              href="https://www.instagram.com/fatinhaccerimonial/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-montserrat text-[9px] tracking-[0.3em] text-primary hover:text-charcoal transition-colors duration-300 uppercase"
             >
-              @fatinhacastrocerimonial
+              @fatinhaccerimonial
             </a>
             <div className="w-10 h-px bg-primary/40" />
           </div>
@@ -81,7 +81,7 @@ export default function InstagramFeed() {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-            href="https://www.instagram.com/fatinhacastrocerimonial"
+            href="https://www.instagram.com/fatinhaccerimonial/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-dark"

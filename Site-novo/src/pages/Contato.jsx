@@ -51,7 +51,7 @@ export default function Contato() {
 
   const submit = e => {
     e.preventDefault()
-    const phone = '5534999999999'
+    const phone = '557998929798'
     const lines = [
       `*Novo contato pelo site*`,
       ``,
@@ -79,7 +79,7 @@ export default function Contato() {
 
             {/* ── Form (3 cols) ─────────────────────────────────── */}
             <div ref={formRef} className="reveal lg:col-span-3">
-              <p className="section-label mb-5">RSVP & Contato</p>
+              <p className="section-label mb-5">Contato</p>
               <h2 className="font-cormorant font-light text-[clamp(2rem,4vw,3rem)] text-charcoal leading-[1.2] mb-8">
                 Conte-nos sobre<br />
                 <em className="font-playfair italic text-primary">o seu evento</em>
@@ -213,8 +213,8 @@ export default function Contato() {
                     </svg>
                   ),
                   label: 'WhatsApp',
-                  value: '(34) 9 9999-9999',
-                  href: 'https://wa.me/5534999999999',
+                  value: '79 9 9892.9798',
+                  href: 'https://wa.me/557998929798',
                 },
                 {
                   icon: (
@@ -224,8 +224,8 @@ export default function Contato() {
                     </svg>
                   ),
                   label: 'E-mail',
-                  value: 'contato@fatinhacastro.com.br',
-                  href: 'mailto:contato@fatinhacastro.com.br',
+                  value: 'fatinhacastrocerimonial@gmail.com',
+                  href: 'mailto:fatinhacastrocerimonial@gmail.com',
                 },
                 {
                   icon: (
@@ -234,8 +234,8 @@ export default function Contato() {
                     </svg>
                   ),
                   label: 'Instagram',
-                  value: '@fatinhacastrocerimonial',
-                  href: 'https://www.instagram.com/fatinhacastrocerimonial',
+                  value: '@fatinhaccerimonial',
+                  href: 'https://www.instagram.com/fatinhaccerimonial/',
                 },
                 {
                   icon: (
@@ -245,7 +245,7 @@ export default function Contato() {
                     </svg>
                   ),
                   label: 'Localização',
-                  value: 'Uberlândia, Minas Gerais',
+                  value: 'Aracaju - SE',
                   href: null,
                 },
               ].map(c => (

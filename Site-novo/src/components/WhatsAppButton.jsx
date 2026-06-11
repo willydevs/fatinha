@@ -1,5 +1,5 @@
 export default function WhatsAppButton() {
-  const phone = '5534999999999'
+  const phone = '557998929798'
   const msg = encodeURIComponent(
     'Olá! Gostaria de saber mais sobre os serviços da Fatinha Castro Assessoria e Cerimonial. 💐'
   )

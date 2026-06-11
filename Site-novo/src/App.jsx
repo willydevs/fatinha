@@ -10,8 +10,17 @@ import Galeria from './pages/Galeria'
 import Contato from './pages/Contato'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 0)
+      return
+    }
+
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
 

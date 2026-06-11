@@ -5,6 +5,7 @@ const links = [
   { name: 'Início', path: '/' },
   { name: 'Sobre', path: '/sobre' },
   { name: 'Serviços', path: '/servicos' },
+  { name: 'Depoimentos', path: '/#depoimentos' },
   { name: 'Galeria', path: '/galeria' },
   { name: 'Contato', path: '/contato' },
 ]
@@ -33,14 +34,10 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-secondary text-white">
-
-      {/* Top gold bar */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-
-          {/* Brand column */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <img src={logo} alt="Fatinha Castro" className="h-10 w-auto mb-4 opacity-80" onError={e => e.target.style.display='none'} />
             <span className="font-cormorant font-light text-xl tracking-[0.3em] text-white">
@@ -68,7 +65,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div className="flex flex-col items-center">
             <p className="section-label mb-6">Navegação</p>
             <nav className="flex flex-col items-center gap-3">
@@ -84,30 +80,36 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Contact */}
           <div className="flex flex-col items-center md:items-end text-center md:text-right">
             <p className="section-label mb-6">Contato</p>
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/5534999999999"
+                href="https://wa.me/557998929798"
                 className="font-dm font-light text-[14px] text-white/55 hover:text-primary transition-colors duration-300"
               >
-                (79) 9892-9798
+                79 9 9892.9798
               </a>
               <a
-                href="mailto:contato@fatinhacerimonial.com.br"
+                href="mailto:fatinhacastrocerimonial@gmail.com"
                 className="font-dm font-light text-[14px] text-white/55 hover:text-primary transition-colors duration-300"
               >
-                contato@fatinhacerimonial.com.br
+                fatinhacastrocerimonial@gmail.com
+              </a>
+              <a
+                href="https://www.instagram.com/fatinhaccerimonial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-dm font-light text-[14px] text-white/55 hover:text-primary transition-colors duration-300"
+              >
+                @fatinhaccerimonial
               </a>
               <span className="font-dm font-light text-[14px] text-white/55">
-                Aracaju, Sergipe
+                Aracaju - SE
               </span>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-14 pt-7 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-montserrat text-[10px] tracking-[0.2em] text-white/30 uppercase">
             © {new Date().getFullYear()} Fatinha Castro Assessoria e Cerimonial
@@ -117,7 +119,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Created by */}
         <div className="mt-4 flex justify-center">
           <p className="font-montserrat text-[10px] tracking-[0.15em] text-white/20">
             Created with <span className="text-red-500">♥</span> by{' '}
@@ -129,7 +130,7 @@ export default function Footer() {
             >
               Willy Elvis
             </a>
-            {' '}— Aracaju, Sergipe
+            {' '}— Aracaju - SE
           </p>
         </div>
       </div>

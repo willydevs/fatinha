@@ -1,29 +1,35 @@
 // ─── Brand ───────────────────────────────────────────────────────────────────
 import logo from '../../imagens/logo.png'
-import fatinaPhoto from '../../imagens/Foto de fatinha.jpg'
+import fatinaPhoto  from '../../imagens/Foto de fatinha.jpg'
+import fatinaPhoto1 from '../../imagens/foto-fatinha1.jpeg'
+import fatinaPhoto2 from '../../imagens/foto-fatinha2.jpeg'
+import fatinaPhoto3 from '../../imagens/foto-fatinha3.jpeg'
 
 // ─── Casamentos ───────────────────────────────────────────────────────────────
-import imgAlinaChico from '../../Galeria – Fatinha Castro/Alina & Chico.jpg'
-import imgCamilaJuan from '../../Galeria – Fatinha Castro/Camila & Juan.jpg'
-import imgCamilaZe from '../../Galeria – Fatinha Castro/Camila & Zé.jpg'
-import imgJessicaDiego from '../../Galeria – Fatinha Castro/Jéssica & Diego.jpg'
-import imgMagnoliaGuto from '../../Galeria – Fatinha Castro/Magnólia & Guto.jpg'
-import imgMonaMaycon from '../../Galeria – Fatinha Castro/Mona & Maycon.png'
+import imgAlinaChico from '../../Galeria – Fatinha Castro/Alina-e-Chico.jpg'
+import imgCamilaJuan from '../../Galeria – Fatinha Castro/Camila-e-Juan.jpg'
+import imgCamilaZe from '../../Galeria – Fatinha Castro/Camila-e-Ze.jpg'
+import imgJessicaDiego from '../../Galeria – Fatinha Castro/Jessica-e-Diego.jpg'
+import imgMagnoliaGuto from '../../Galeria – Fatinha Castro/Magnolia-e-Guto.jpg'
+import imgMonaMaycon from '../../Galeria – Fatinha Castro/Mona-e-Maycon.png'
 
 // ─── Debutantes ───────────────────────────────────────────────────────────────
-import imgBruninha from '../../Galeria – Fatinha Castro/Bruninha 15 anos.png'
-import imgGabi from '../../Galeria – Fatinha Castro/Gabi 15 anos.jpg'
-import imgLaviniaLins from '../../Galeria – Fatinha Castro/Lavínia Lins 15 anos.jpg'
-import imgMaEdwardaXV from '../../Galeria – Fatinha Castro/Mº Eduarda XV.jpg'
+import imgBruninha from '../../Galeria – Fatinha Castro/Bruninha-15-anos.png'
+import imgGabi from '../../Galeria – Fatinha Castro/Gabi-15-anos.jpg'
+import imgLaviniaLins from '../../Galeria – Fatinha Castro/Lavinia-Lins-15-anos.jpg'
+import imgMaEdwardaXV from '../../Galeria – Fatinha Castro/Mo-Eduarda-XV.jpg'
 
 // ─── Festas & Eventos ─────────────────────────────────────────────────────────
-import imgIngridResende from '../../Galeria – Fatinha Castro/Ingrid Resende.jpg'
-import imgSandra from '../../Galeria – Fatinha Castro/Sandra 50 anos.jpg'
-import imgSane from '../../Galeria – Fatinha Castro/Sane 20 anos.jpg'
+import imgIngridResende from '../../Galeria – Fatinha Castro/Ingrid-Resende.jpg'
+import imgSandra from '../../Galeria – Fatinha Castro/Sandra-50-anos.jpg'
+import imgSane from '../../Galeria – Fatinha Castro/Sane-20-anos.jpg'
 
 export {
   logo,
   fatinaPhoto,
+  fatinaPhoto1,
+  fatinaPhoto2,
+  fatinaPhoto3,
   // Casamentos
   imgAlinaChico,
   imgCamilaJuan,
