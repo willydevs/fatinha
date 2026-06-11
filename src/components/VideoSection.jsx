@@ -54,7 +54,7 @@ export default function VideoSection() {
 
         <div ref={ctaRef} className="reveal">
           <Link to="/contato" className="btn-ghost">
-            Agendar Consulta
+            Solicite um Orçamento
           </Link>
         </div>
 

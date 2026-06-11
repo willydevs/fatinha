@@ -274,7 +274,7 @@ export default function Contato() {
               {/* Ornament */}
               <div className="border border-primary/15 p-7 mt-2">
                 <p className="font-cormorant italic font-light text-[1.3rem] text-charcoal leading-[1.6]">
-                  "Respondo todas as mensagens com carinho. Não hesite em nos contar o seu sonho."
+                  "Seu sonho merece um planejamento conduzido com transparência, precisão e excelência. Conte-nos sobre sua celebração e daremos início a uma jornada extraordinária."
                 </p>
                 <p className="font-cormorant italic text-primary text-[1.1rem] mt-4">— Fatinha Castro</p>
               </div>

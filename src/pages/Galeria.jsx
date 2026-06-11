@@ -91,8 +91,8 @@ function PortfolioTab() {
       <div ref={headerRef} className="reveal text-center mb-12">
         <p className="section-label mb-5">Portfólio</p>
         <h2 className="font-cormorant font-light text-[clamp(2.2rem,4.5vw,3.6rem)] text-charcoal leading-[1.15]">
-          Memórias que<br />
-          <em className="font-playfair italic text-primary">realizamos juntos</em>
+          Grandes histórias celebradas<br />
+          <em className="font-playfair italic text-primary">com excelência e propósito</em>
         </h2>
       </div>
 
