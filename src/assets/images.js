@@ -11,6 +11,7 @@ import capaCelebracoes  from '../../imagens/capa-celebracoes.jpeg'
 import heroSlide1       from '../../imagens/slide1.jpeg'
 import heroSlide2       from '../../imagens/slide2.jpeg'
 import heroSlide3       from '../../imagens/slide3.jpeg'
+import bgEventoUnico    from '../../imagens/bg-evento-unico.jpeg'
 
 // ─── Casamentos ───────────────────────────────────────────────────────────────
 import imgAlinaChico          from '../../Galeria – Fatinha Castro/Alina-e-Chico.jpg'
@@ -64,6 +65,7 @@ export {
   heroSlide1,
   heroSlide2,
   heroSlide3,
+  bgEventoUnico,
   // Casamentos
   imgAlinaChico, imgCamilaJuan, imgCamilaZe, imgJessicaDiego,
   imgMagnoliaGuto, imgMonaMaycon, imgItaloTiago, imgStephanieMatheus,

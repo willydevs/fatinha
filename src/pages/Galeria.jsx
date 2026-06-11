@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
-import { galeriaItems, imgMagnoliaGuto } from '../assets/images'
+import { galeriaItems, heroSlide2 } from '../assets/images'
 
 const INSTAGRAM_FEED_ID = '' // ← cole aqui o Feed ID do behold.so após conectar o Instagram
 
@@ -16,7 +16,7 @@ function PageHero() {
     <section className="relative">
       <div
         className="relative flex items-center justify-center h-[440px] md:h-[520px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${imgMagnoliaGuto})` }}
+        style={{ backgroundImage: `url(${heroSlide2})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/72" />
         <div className="relative z-10 text-center text-white px-6 pt-[78px] lg:pt-[92px]">

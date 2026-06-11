@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
-import { imgCamilaZe } from '../assets/images'
+import { bgEventoUnico } from '../assets/images'
 
 export default function VideoSection() {
   const titleRef = useReveal(0.2)
@@ -14,7 +14,7 @@ export default function VideoSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{ backgroundImage: `url(${imgCamilaZe})` }}
+        style={{ backgroundImage: `url(${bgEventoUnico})` }}
       />
 
       {/* Dark overlay */}
