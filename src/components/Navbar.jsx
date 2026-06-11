@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { logo } from '../assets/images'
+import { logo, logoWhite } from '../assets/images'
 
 const leftLinks = [
   { name: 'INÍCIO', path: '/' },
@@ -67,20 +67,13 @@ export default function Navbar() {
 
           <Link
             to="/"
-            className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-[3px] group"
+            className="absolute left-1/2 -translate-x-1/2 flex items-center group"
           >
             <img
-              src={logo}
-              alt="Logo Fatinha Castro"
-              className={`h-7 w-auto mb-0.5 transition-opacity duration-300 ${scrolled ? 'opacity-80' : 'opacity-90'} group-hover:opacity-100`}
-              onError={e => e.target.style.display = 'none'}
+              src={scrolled ? logo : logoWhite}
+              alt="Fatinha Castro"
+              className="h-10 lg:h-12 w-auto transition-opacity duration-300 opacity-90 group-hover:opacity-100"
             />
-            <span className={`font-cormorant font-light tracking-[0.32em] text-[17px] lg:text-[19px] leading-none transition-colors duration-300 ${scrolled ? 'text-secondary' : 'text-white'}`}>
-              FATINHA CASTRO
-            </span>
-            <span className={`font-montserrat text-[7px] tracking-[0.42em] uppercase leading-none transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white/68'}`}>
-              ASSESSORIA E CERIMONIAL
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-9 flex-1 justify-end">
@@ -122,13 +115,8 @@ export default function Navbar() {
           <span className="block w-[22px] h-[1px] bg-charcoal -rotate-45 -translate-y-[2px]" />
         </button>
 
-        <div className="absolute top-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-          <span className="font-cormorant font-light text-[17px] tracking-[0.3em] text-secondary">
-            FATINHA CASTRO
-          </span>
-          <span className="font-montserrat text-[7px] tracking-[0.42em] text-primary uppercase">
-            ASSESSORIA E CERIMONIAL
-          </span>
+        <div className="absolute top-7 left-1/2 -translate-x-1/2">
+          <img src={logo} alt="Fatinha Castro" className="h-10 w-auto opacity-85" />
         </div>
 
         <nav className="flex flex-col items-center gap-7">
