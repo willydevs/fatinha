@@ -1,6 +1,9 @@
+import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
-import { fatinaPhoto, imgCamilaJuan, imgBruninha, imgSandra } from '../assets/images'
+import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3, imgCamilaJuan, imgBruninha, imgSandra } from '../assets/images'
+
+const photos = [fatinaPhoto1, fatinaPhoto2, fatinaPhoto3]
 
 const values = [
   {
@@ -50,9 +53,16 @@ function PageHero() {
 }
 
 export default function Sobre() {
+  const [photoIdx, setPhotoIdx] = useState(0)
   const s1 = useReveal(0.15)
   const s2 = useReveal(0.15, 150)
   const s3 = useReveal(0.1)
+
+  const nextPhoto = useCallback(() => setPhotoIdx(i => (i + 1) % photos.length), [])
+  useEffect(() => {
+    const id = setInterval(nextPhoto, 5000)
+    return () => clearInterval(id)
+  }, [nextPhoto])
 
   return (
     <>
@@ -63,16 +73,34 @@ export default function Sobre() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-            {/* Photo */}
+            {/* Photo slideshow */}
             <div ref={s1} className="reveal-left">
               <div className="gold-frame">
                 <div className="relative overflow-hidden aspect-[3/4]">
-                  <img
-                    src={fatinaPhoto}
-                    alt="Fatinha Castro"
-                    className="w-full h-full object-cover object-top"
-                  />
+                  {photos.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt="Fatinha Castro"
+                      className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700"
+                      style={{ opacity: i === photoIdx ? 1 : 0 }}
+                    />
+                  ))}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent pointer-events-none" />
+
+                  {/* Dot indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {photos.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setPhotoIdx(i)}
+                        aria-label={`Foto ${i + 1}`}
+                        className={`w-[7px] h-[7px] rounded-full transition-all duration-300 ${
+                          i === photoIdx ? 'bg-primary scale-125' : 'bg-white/60'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
