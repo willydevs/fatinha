@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { logo, logoWhite } from '../assets/images'
+import { logo } from '../assets/images'
 
 const leftLinks = [
   { name: 'INÍCIO', path: '/' },
@@ -85,9 +85,9 @@ export default function Navbar() {
                 className="absolute left-1/2 -translate-x-1/2 flex items-center group"
               >
                 <img
-                  src={scrolled ? logo : logoWhite}
+                  src={logo}
                   alt="Fatinha Castro"
-                  className="h-10 lg:h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                  className={`h-52 lg:h-56 w-auto opacity-90 group-hover:opacity-100 transition-all duration-300 ${!scrolled ? 'brightness-0 invert' : ''}`}
                 />
               </Link>
 
@@ -133,7 +133,7 @@ export default function Navbar() {
         </button>
 
         <div className="absolute top-7 left-1/2 -translate-x-1/2">
-          <img src={logo} alt="Fatinha Castro" className="h-10 w-auto opacity-85" />
+          <img src={logo} alt="Fatinha Castro" className="h-16 w-auto opacity-85" />
         </div>
 
         <nav className="flex flex-col items-center gap-7">

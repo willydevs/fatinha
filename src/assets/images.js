@@ -1,6 +1,5 @@
 // ─── Brand ───────────────────────────────────────────────────────────────────
 import logo from '../../imagens/logo.png'
-import logoWhite from '../../imagens/logo-white.png'
 import fatinaPhoto  from '../../imagens/Foto de fatinha.jpg'
 import fatinaPhoto1 from '../../imagens/foto-fatinha1.jpeg'
 import fatinaPhoto2 from '../../imagens/foto-fatinha2.jpeg'
@@ -54,7 +53,6 @@ import imgJaneVieira          from '../../Galeria – Fatinha Castro/Aniversaria
 
 export {
   logo,
-  logoWhite,
   fatinaPhoto,
   fatinaPhoto1,
   fatinaPhoto2,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { heroSlide1, logoWhite } from '../assets/images'
+import { heroSlide1, logo } from '../assets/images'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -28,9 +28,9 @@ export default function Hero() {
       {/* Logo — centralizada no mobile, posicionada no terço direito no desktop */}
       <div className="absolute inset-0 z-10 flex items-center justify-center lg:items-center lg:justify-end lg:pr-[18%]">
         <img
-          src={logoWhite}
+          src={logo}
           alt="Fatinha Castro"
-          className="w-[clamp(160px,20vw,280px)] h-auto opacity-90"
+          className="w-[clamp(160px,20vw,280px)] h-auto opacity-90 brightness-0 invert"
           style={{ animation: 'fadeIn 1.2s ease both' }}
         />
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
-import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3, heroSlide2, imgBruninha, imgSandra } from '../assets/images'
+import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3, heroSlide2, imgCamilaJuan, imgBruninha, imgSandra } from '../assets/images'
 
 const photos = [fatinaPhoto1, fatinaPhoto2, fatinaPhoto3]
 
