@@ -100,18 +100,4 @@ export const galeriaItems = [
   { src: imgJuliaDelfina,     label: 'Júlia Delfina',              cat: 'debutante', date: '2022-12' },
   { src: imgStephanieMatheus, label: 'Stephanie & Matheus',        cat: 'casamento', date: '2022-11' },
   { src: imgItaloTiago,       label: 'Italo & Tiago',              cat: 'casamento', date: '2022-08' },
-  // ── Sem data (aguardando ordem da cliente) ──
-  { src: imgAlinaChico,       label: 'Alina & Chico',              cat: 'casamento' },
-  { src: imgCamilaJuan,       label: 'Camila & Juan',              cat: 'casamento' },
-  { src: imgCamilaZe,         label: 'Camila & Zé',                cat: 'casamento' },
-  { src: imgJessicaDiego,     label: 'Jéssica & Diego',            cat: 'casamento' },
-  { src: imgMagnoliaGuto,     label: 'Magnólia & Guto',            cat: 'casamento' },
-  { src: imgMonaMaycon,       label: 'Mona & Maycon',              cat: 'casamento' },
-  { src: imgBruninha,         label: 'Bruninha',                   cat: 'debutante' },
-  { src: imgGabi,             label: 'Gabi',                       cat: 'debutante' },
-  { src: imgLaviniaLins,      label: 'Lavínia Lins',               cat: 'debutante' },
-  { src: imgMaEdwardaXV,      label: 'Mª Eduarda',                 cat: 'debutante' },
-  { src: imgIngridResende,    label: 'Ingrid Resende',             cat: 'evento'    },
-  { src: imgSandra,           label: 'Sandra',                     cat: 'evento'    },
-  { src: imgSane,             label: 'Sane',                       cat: 'evento'    },
 ]
