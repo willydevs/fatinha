@@ -1,6 +1,68 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
+function TestimonialModal({ t, onClose }) {
+  useEffect(() => {
+    const handler = e => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
+
+  if (!t) return null
+  return (
+    <div
+      className="fixed inset-0 z-[80] bg-black/80 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white max-w-2xl w-full shadow-2xl overflow-hidden"
+        style={{ animation: 'fadeIn 0.35s ease both' }}
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Fechar"
+          className="absolute top-3 right-3 z-10 w-9 h-9 bg-primary flex items-center justify-center text-white hover:bg-primary/80 transition-colors duration-300"
+        >
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M1 1L13 13M13 1L1 13"/>
+          </svg>
+        </button>
+
+        <div className="flex flex-col sm:flex-row">
+          <div className="w-full h-64 sm:w-56 sm:h-auto flex-shrink-0">
+            <img src={t.img} alt={t.name} className="w-full h-full object-cover object-top" />
+          </div>
+          <div className="flex-1 p-7 flex flex-col justify-center">
+            <div className="flex gap-1.5 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="12" height="12" viewBox="0 0 14 14" fill="#C9A96E">
+                  <path d="M7 0L8.56 5.12L14 5.15L9.76 8.32L11.35 13.43L7 10.24L2.65 13.43L4.24 8.32L0 5.15L5.44 5.12L7 0Z"/>
+                </svg>
+              ))}
+            </div>
+            <span className="font-cormorant text-[4rem] leading-none text-primary/15 select-none -mt-3 mb-1 block" aria-hidden="true">"</span>
+            <p className="font-cormorant font-light text-[1.05rem] text-charcoal leading-[1.75] italic">
+              {t.quote}
+            </p>
+            <div className="flex items-center gap-3 mt-6 mb-4">
+              <div className="w-8 h-px bg-primary/40" />
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+            </div>
+            <p className="font-cormorant text-[1.15rem] font-light tracking-wide text-charcoal">{t.name}</p>
+            <p className="font-montserrat text-[9px] tracking-[0.3em] text-primary uppercase mt-0.5">
+              {t.role} · {t.date}
+            </p>
+            {t.author && (
+              <p className="font-montserrat text-[8.5px] tracking-[0.12em] text-taupe mt-1.5">{t.author}</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 import imgItaloTiago     from '../../Galeria – Fatinha Castro/italo-tiago.jpeg'
 import imgStephanie      from '../../Galeria – Fatinha Castro/Stephanie-Matheus.jpeg'
 import imgJuliaDelfina   from '../../Galeria – Fatinha Castro/Debutante-Julia-Delfina.jpeg'
@@ -174,6 +236,7 @@ const testimonials = [
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0)
+  const [modalItem, setModalItem] = useState(null)
   const headerRef = useReveal(0.15)
 
   const next = useCallback(() => setCurrent(c => (c + 1) % testimonials.length), [])
@@ -208,12 +271,22 @@ export default function Testimonials() {
             <div className="flex flex-col md:flex-row">
 
               {/* Photo */}
-              <div className="w-full h-64 md:w-[260px] md:h-auto md:flex-shrink-0">
+              <div
+                className="w-full h-64 md:w-[260px] md:h-auto md:flex-shrink-0 cursor-pointer relative group"
+                onClick={() => setModalItem(t)}
+                title="Ver depoimento completo"
+              >
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-400 flex items-center justify-center">
+                  <svg className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="white" strokeWidth="1.2">
+                    <circle cx="18" cy="18" r="15"/>
+                    <path d="M12 18h12M18 12v12" strokeLinecap="round"/>
+                  </svg>
+                </div>
               </div>
 
               {/* Content */}
@@ -264,6 +337,8 @@ export default function Testimonials() {
               </div>
             </div>
           </div>
+
+          <TestimonialModal t={modalItem} onClose={() => setModalItem(null)} />
 
           {/* Navigation arrows + dots */}
           <div className="flex justify-center items-center gap-5 mt-8">

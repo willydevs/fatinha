@@ -4,12 +4,6 @@ import { galeriaItems, heroSlide2 } from '../assets/images'
 
 const INSTAGRAM_FEED_ID = '' // ← cole aqui o Feed ID do behold.so após conectar o Instagram
 
-const filters = [
-  { key: 'all',       label: 'Todos'      },
-  { key: 'casamento', label: 'Casamentos' },
-  { key: 'debutante', label: 'Debutantes' },
-  { key: 'evento',    label: 'Eventos'    },
-]
 
 function PageHero() {
   return (
@@ -78,13 +72,8 @@ function Lightbox({ item, onClose }) {
 }
 
 function PortfolioTab() {
-  const [filter, setFilter] = useState('all')
   const [lightbox, setLightbox] = useState(null)
   const headerRef = useReveal(0.15)
-
-  const visible = filter === 'all'
-    ? galeriaItems
-    : galeriaItems.filter(i => i.cat === filter)
 
   return (
     <>
@@ -96,26 +85,9 @@ function PortfolioTab() {
         </h2>
       </div>
 
-      {/* Filters */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
-        {filters.map(f => (
-          <button
-            key={f.key}
-            onClick={() => setFilter(f.key)}
-            className={`font-montserrat text-[9.5px] tracking-[0.28em] uppercase px-6 py-2.5 border transition-all duration-300 ${
-              filter === f.key
-                ? 'bg-primary border-primary text-white'
-                : 'border-charcoal/25 text-taupe hover:border-primary hover:text-primary'
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
-
       {/* Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
-        {visible.map((item, i) => (
+        {galeriaItems.map((item, i) => (
           <div
             key={`${item.label}-${i}`}
             className="gallery-item relative overflow-hidden aspect-square cursor-pointer group"
@@ -144,10 +116,6 @@ function PortfolioTab() {
           </div>
         ))}
       </div>
-
-      <p className="text-center font-montserrat text-[10px] tracking-[0.25em] text-taupe uppercase mt-10">
-        {visible.length} {visible.length === 1 ? 'evento' : 'eventos'} encontrados
-      </p>
 
       <Lightbox item={lightbox} onClose={() => setLightbox(null)} />
     </>
