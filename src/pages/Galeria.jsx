@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import { galeriaItems, heroSlide2 } from '../assets/images'
+import { testimonials, TestimonialModal } from '../components/Testimonials'
 
 const INSTAGRAM_FEED_ID = '' // ← cole aqui o Feed ID do behold.so após conectar o Instagram
 
@@ -73,7 +74,14 @@ function Lightbox({ item, onClose }) {
 
 function PortfolioTab() {
   const [lightbox, setLightbox] = useState(null)
+  const [testimonial, setTestimonial] = useState(null)
   const headerRef = useReveal(0.15)
+
+  function handleClick(item) {
+    const match = testimonials.find(t => t.name === item.label)
+    if (match) setTestimonial(match)
+    else setLightbox(item)
+  }
 
   return (
     <>
@@ -87,37 +95,54 @@ function PortfolioTab() {
 
       {/* Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
-        {galeriaItems.map((item, i) => (
-          <div
-            key={`${item.label}-${i}`}
-            className="gallery-item relative overflow-hidden aspect-square cursor-pointer group"
-            onClick={() => setLightbox(item)}
-            style={{ animation: 'fadeInUp 0.5s ease both', animationDelay: `${i * 0.04}s` }}
-          >
-            <img
-              src={item.src}
-              alt={item.label}
-              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.07]"
-            />
-            <div className="gallery-overlay absolute inset-0 bg-black/52 flex flex-col items-center justify-center gap-2 p-3">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="white" strokeWidth="1.2">
-                <circle cx="11" cy="11" r="9"/>
-                <path d="M8 11h6M11 8v6" strokeLinecap="round"/>
-              </svg>
-              <p className="font-cormorant font-light text-white text-center text-[1rem] leading-tight">
-                {item.label}
-              </p>
-              <p className="font-montserrat text-[7.5px] tracking-[0.3em] text-primary uppercase">
-                {item.cat === 'casamento' ? 'Casamento' : item.cat === 'debutante' ? 'Debutante' : 'Evento'}
-              </p>
+        {galeriaItems.map((item, i) => {
+          const hasTestimonial = testimonials.some(t => t.name === item.label)
+          return (
+            <div
+              key={`${item.label}-${i}`}
+              className="gallery-item relative overflow-hidden aspect-square cursor-pointer group"
+              onClick={() => handleClick(item)}
+              style={{ animation: 'fadeInUp 0.5s ease both', animationDelay: `${i * 0.04}s` }}
+            >
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.07]"
+              />
+              <div className="gallery-overlay absolute inset-0 bg-black/52 flex flex-col items-center justify-center gap-2 p-3">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="white" strokeWidth="1.2">
+                  {hasTestimonial ? (
+                    <>
+                      <circle cx="11" cy="11" r="9"/>
+                      <path d="M7.5 9.5c0-1.1.9-2 2-2h.5c1.1 0 2 .9 2 2 0 1-.6 1.7-1.5 2l-.5.2V13" strokeLinecap="round"/>
+                      <circle cx="11" cy="14.5" r=".5" fill="white" stroke="none"/>
+                    </>
+                  ) : (
+                    <>
+                      <circle cx="11" cy="11" r="9"/>
+                      <path d="M8 11h6M11 8v6" strokeLinecap="round"/>
+                    </>
+                  )}
+                </svg>
+                <p className="font-cormorant font-light text-white text-center text-[1rem] leading-tight">
+                  {item.label}
+                </p>
+                <p className="font-montserrat text-[7.5px] tracking-[0.3em] text-primary uppercase">
+                  {item.cat === 'casamento' ? 'Casamento' : item.cat === 'debutante' ? 'Debutante' : 'Evento'}
+                </p>
+                {hasTestimonial && (
+                  <p className="font-montserrat text-[6.5px] tracking-[0.2em] text-white/60 uppercase">ver depoimento</p>
+                )}
+              </div>
+              <div className="absolute top-2 left-2 w-5 h-5 border-t border-l border-primary/0 group-hover:border-primary/70 transition-colors duration-500" />
+              <div className="absolute bottom-2 right-2 w-5 h-5 border-b border-r border-primary/0 group-hover:border-primary/70 transition-colors duration-500" />
             </div>
-            <div className="absolute top-2 left-2 w-5 h-5 border-t border-l border-primary/0 group-hover:border-primary/70 transition-colors duration-500" />
-            <div className="absolute bottom-2 right-2 w-5 h-5 border-b border-r border-primary/0 group-hover:border-primary/70 transition-colors duration-500" />
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       <Lightbox item={lightbox} onClose={() => setLightbox(null)} />
+      <TestimonialModal t={testimonial} onClose={() => setTestimonial(null)} />
     </>
   )
 }

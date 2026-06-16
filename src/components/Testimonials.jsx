@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
-function TestimonialModal({ t, onClose }) {
+export function TestimonialModal({ t, onClose }) {
   useEffect(() => {
     const handler = e => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
@@ -84,7 +84,7 @@ import imgLeticiaJunior  from '../../Galeria – Fatinha Castro/Leticia-e-Junior
 import imgCatarinaCarlos from '../../Galeria – Fatinha Castro/Catarina-e-Carlos.jpeg'
 import imgMarcelaAndre   from '../../Galeria – Fatinha Castro/Marcela-e-Andre.jpeg'
 
-const testimonials = [
+export const testimonials = [
   {
     img: imgItaloTiago,
     name: 'Italo & Tiago',
