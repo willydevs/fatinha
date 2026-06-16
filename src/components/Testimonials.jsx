@@ -180,7 +180,7 @@ export default function Testimonials() {
   const prev = useCallback(() => setCurrent(c => (c - 1 + testimonials.length) % testimonials.length), [])
 
   useEffect(() => {
-    const id = setInterval(next, 8000)
+    const id = setInterval(next, 10400)
     return () => clearInterval(id)
   }, [next])
 
