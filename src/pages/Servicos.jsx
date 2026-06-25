@@ -146,9 +146,14 @@ export default function Servicos() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contato" className="btn-gold self-start mt-3">
+                <a
+                  href="https://assessoriavip.com.br/funnelFormLead/80456960-1f9a-11ec-9ebb-455e2798ed85"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold self-start mt-3"
+                >
                   Solicitar Orçamento
-                </Link>
+                </a>
               </div>
             </div>
           ))}
@@ -193,7 +198,14 @@ export default function Servicos() {
               <em className="font-playfair italic text-primary">o seu evento perfeito</em>
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/contato" className="btn-gold">Entrar em Contato</Link>
+              <a
+                href="https://assessoriavip.com.br/funnelFormLead/80456960-1f9a-11ec-9ebb-455e2798ed85"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold"
+              >
+                Solicite um Orçamento
+              </a>
               <Link to="/galeria" className="btn-outline-dark"><span>Ver Nosso Portfólio</span></Link>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 import { bgEventoUnico } from '../assets/images'
 
@@ -53,9 +52,14 @@ export default function VideoSection() {
         </p>
 
         <div ref={ctaRef} className="reveal">
-          <Link to="/contato" className="btn-ghost">
+          <a
+            href="https://assessoriavip.com.br/funnelFormLead/80456960-1f9a-11ec-9ebb-455e2798ed85"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
             Solicite um Orçamento
-          </Link>
+          </a>
         </div>
 
         {/* Bottom ornament */}

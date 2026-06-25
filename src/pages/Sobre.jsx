@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 import { fatinaPhoto1, fatinaPhoto2, fatinaPhoto3, heroSlide2, imgCamilaJuan, imgBruninha, imgSandra } from '../assets/images'
 
@@ -184,9 +183,14 @@ export default function Sobre() {
             Pronta para realizar<br />
             <em className="font-playfair italic text-primary">o seu evento dos sonhos</em>
           </h2>
-          <Link to="/contato" className="btn-gold">
-            Entrar em Contato
-          </Link>
+          <a
+            href="https://assessoriavip.com.br/funnelFormLead/80456960-1f9a-11ec-9ebb-455e2798ed85"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold"
+          >
+            Solicite um Orçamento
+          </a>
         </div>
       </section>
     </>
